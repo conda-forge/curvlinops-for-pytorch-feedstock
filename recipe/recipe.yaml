@@ -1,6 +1,6 @@
 context:
   name: curvlinops-for-pytorch
-  version: 2.0.0
+  version: "2.0.1"
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/${{ name[0] }}/${{ name }}/curvlinops_for_pytorch-${{ version }}.tar.gz
-  sha256: 01f9925db9454fc9b0a31c7b83fc8ec2534c2eb12b7de7825a5298fc14e460e7
+  sha256: 2028a0542f50c40e687137930180dbb1ff87f0b798adab5d9e62b2da81b82da3
 
 build:
   number: 0
@@ -29,6 +29,7 @@ requirements:
     - tqdm >=4.61.0,<5.0.0
     - einops
     - einconv
+    - numpy <2
 
 tests:
   - python:
