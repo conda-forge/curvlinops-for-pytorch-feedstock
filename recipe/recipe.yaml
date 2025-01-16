@@ -29,6 +29,7 @@ requirements:
     - tqdm >=4.61.0,<5.0.0
     - einops
     - einconv
+    - numpy <2
 
 tests:
   - python:
