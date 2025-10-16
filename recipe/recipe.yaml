@@ -17,19 +17,20 @@ build:
 
 requirements:
   host:
-    - python >=3.8
+    - python >=3.9
     - setuptools >=61.0
     - setuptools-scm
     - pip
   run:
-    - python >=3.8
-    - backpack-for-pytorch >=1.6.0,<2.0.0
+    - python >=3.9
+    - backpack-for-pytorch >=1.6.0
     - pytorch >=2.0
-    - scipy >=1.7.1,<2.0.0
-    - tqdm >=4.61.0,<5.0.0
-    - einops
-    - einconv
-    - numpy <2
+    - scipy >=1.7.1
+    - tqdm >=4.61.0
+    - einops >=0.3.0
+    - einconv >=0.1.0
+    - numpy >=1.21
+    - linear_operator >=0.2.0
 
 tests:
   - python:
