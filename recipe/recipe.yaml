@@ -34,7 +34,7 @@ requirements:
 
 tests:
   - python:
-      imports: sqlalchemy_oso
+      imports: curvlinops
       python_version: ${{ python_min }}.*
       pip_check: true
 
