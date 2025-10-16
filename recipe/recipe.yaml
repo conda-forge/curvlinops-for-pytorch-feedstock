@@ -1,14 +1,14 @@
 context:
   name: curvlinops-for-pytorch
-  version: "2.0.1"
+  version: "3.0.0"
 
 package:
   name: ${{ name|lower }}
   version: ${{ version }}
 
 source:
-  url: https://pypi.io/packages/source/${{ name[0] }}/${{ name }}/curvlinops_for_pytorch-${{ version }}.tar.gz
-  sha256: 2028a0542f50c40e687137930180dbb1ff87f0b798adab5d9e62b2da81b82da3
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/curvlinops_for_pytorch-${{ version }}.tar.gz
+  sha256: 52ff661821147705f66a981ea090c750ad9e4c741c06f46d8282c5e63c776066
 
 build:
   number: 0
@@ -17,29 +17,26 @@ build:
 
 requirements:
   host:
-    - python >=3.8
+    - python ${{ python_min }}.*
     - setuptools >=61.0
     - setuptools-scm
     - pip
   run:
-    - python >=3.8
-    - backpack-for-pytorch >=1.6.0,<2.0.0
+    - python >=${{ python_min }}
+    - backpack-for-pytorch >=1.6.0
     - pytorch >=2.0
-    - scipy >=1.7.1,<2.0.0
-    - tqdm >=4.61.0,<5.0.0
-    - einops
-    - einconv
-    - numpy <2
+    - scipy >=1.7.1
+    - tqdm >=4.61.0
+    - einops >=0.3.0
+    - einconv >=0.1.0
+    - numpy >=1.21
+    - linear_operator >=0.2.0
 
 tests:
   - python:
-      imports:
-        - curvlinops
-  - requirements:
-      run:
-        - pip
-    script:
-      - pip check
+      imports: curvlinops
+      python_version: ${{ python_min }}.*
+      pip_check: true
 
 about:
   summary: scipy Linear operators for curvature matrices in PyTorch
